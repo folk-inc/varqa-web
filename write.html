@@ -73,8 +73,11 @@
 
 
 	$(document).keypress(function(e) {
+	    if (e.shiftKey) {
+	        return;
+	    }
     	if(e.which == 13) {
-    	    sendm();
+    	   sendm();
     	}
 	});
 
