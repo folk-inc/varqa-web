@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>بسازید...</title>
+	<script src="js/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src="js/jquery.min.js"></script>
+	<style type="text/css">
+		@font-face {
+    		font-family: by;
+    		src: url(style/fonts/by.ttf);
+		}
+		@font-face {
+    		font-family: OpenSans;
+    		src: url(style/fonts/OpenSansCondensed-Light.ttf);
+		}
+		@font-face {
+    		font-family: Ubuntu;
+    		src: url(style/fonts/Ubuntu-Light.ttf);
+		}
+		
+		input:-webkit-autofill,
+		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:focus{
+			-webkit-text-fill-color: #eee;
+			transition: background-color 5000s ease-in-out 0s;
+		}
+		body{
+			direction: rtl;
+			background-color: #353535;
+		}
+		.mymod{
+			width: 30%;
+			height: auto;
+			background-color: rgba(255,255,255,0.2);
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+			border-radius: 3px;
+			font-size: 150%;
+			text-align: center;
+			display: block;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+		}
+		h1{
+			font-family: Ubuntu, OpenSans, sans-serif;
+		}
+		p{
+			font-family: by;
+		}
+		#sub{
+			font-family: by;
+		}
+		button{
+			font-family: by;
+		}
+		input[type=text], input[type=password]{
+			font-family: Ubuntu, by, OpenSans, sans-serif;
+			font-size: 100%;
+			font-weight: 100;
+			border: none;
+			background-color: rgba(0, 0, 0, 0.25);
+			border-radius: 5px;
+			width: 80%;
+			height: 10%;
+			padding: 2%;
+			color: #eee;
+			margin-bottom: 4%;
+			outline: none;
+		}
+		input[type=checkbox]{
+			border: none;
+			outline: none;
+			width: 1.5em;
+			height: 1.5em;
+			background-color: #333;
+			cursor: pointer;
+		}
+		.button{
+			width: 80%;
+			border-radius: 5px;
+			padding: 3%;
+			cursor: pointer;
+			border: none;
+			background-color: rgba(90,173,173,0.3);
+			outline: none;
+			color: #f5f5f5;
+		}
+		.button:hover{
+			background-color: rgba(90,173,173,0.5);
+		}
+		.button:focus{
+			background-color: rgba(90,173,173,0.5);
+		}
+		#name{
+			direction: rtl;
+			text-align: right;
+		}
+		label{
+			font-family: by;
+			background-color: rgba(0, 0, 0, 0.25);
+			border-radius: 5px;
+			padding: 2%;
+			color: #eee;
+			cursor: pointer;
+		}
+		#khata{
+			font-family: by;
+		}
+		button::-moz-focus-inner {
+		  border: 0;
+		}
+	</style>
+</head>
+<body>
+<div class="mymod">
+<h1>CreateGroup|Channel</h1>
+<div class="container">
+<input id="title" type="text" placeholder="عنوان"><br>
+<label>کانال باشه
+  <input class="channel" type="checkbox" value="yes">
+</label><br><br>
+<button onclick="createcg()" class="button">برو که رفتیم</button><br><br>
+</div>
+<p id="khata"></p>
+</div>
+</body>
+<script type="text/javascript">
+
+	var varqa_api_url = sessionStorage.getItem("varqaapiurl");
+	
+	var myuser = sessionStorage.getItem("varqauser");
+	var mypass = sessionStorage.getItem("varqapass");
+
+	
+	function createcg(){
+
+		$("#khata").html('');
+
+		var mytitle = $("#title").val();
+		var thistype = ($('input.channel').is(':checked')) ? 'channel' : 'group';
+
+		if (!mytitle) {$("#khata").html('جاها خالی رو پر کنید لطفا!!!'); return;}
+
+		$.ajax({
+			type : 'POST',
+			url : varqa_api_url+'group/create/',
+			headers: {varqauser: myuser, varqapass: mypass},
+			data: '{"title": "'+mytitle+'", "type": "'+thistype+'"}',
+			dataType: 'json',
+			contentType: 'application/json',
+			success : function(data){
+				if (data.ok == true) 
+				{
+					$(".container").html('');
+					$("#khata").html('گروه با موفقیت ساخته شد...:-)');
+					localStorage.setItem("gid", data.results.group_id);
+					setTimeout(function(){
+                  		window.location.replace(sessionStorage.getItem("varqaweburl"));
+                	}, 2000);
+				}
+				else
+				{
+					$("#khata").html('د نه د. اشتباه زدی :-|');
+				}
+			}
+			});
+	}
+
+	$(document).keypress(function(e) {
+    	if(e.which == 13) {
+    	    createcg();
+    	}
+	});
+</script>
+</html>

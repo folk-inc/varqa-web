@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Send File to Varqa Group</title>
+	<script src="../js/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src="../js/jquery.min.js"></script>
+	<style type="text/css">
+		@font-face {
+    		font-family: by;
+    		src: url(../style/fonts/by.ttf);
+		}
+		@font-face {
+    		font-family: OpenSans;
+    		src: url(../style/fonts/OpenSansCondensed-Light.ttf);
+		}
+		@font-face {
+    		font-family: Ubuntu;
+    		src: url(../style/fonts/Ubuntu-Light.ttf);
+		}
+
+
+		input:-webkit-autofill,
+		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:focus{
+			-webkit-text-fill-color: #eee;
+			transition: background-color 5000s ease-in-out 0s;
+		}
+		body{
+			direction: rtl;
+			background-color: #ececec;
+			background-color: #353535;
+		}
+		h1{
+			font-family: Ubuntu, OpenSans, sans-serif;
+		}
+		.div{
+			width: 30%;
+			height: max-content;
+			background-color: rgba(255,255,255,0.2);
+			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+			border-radius: 3px;
+			font-size: 150%;
+			text-align: center;
+			display: block;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+		}
+		p{
+			font-family: by, Ubuntu;
+		}
+		label{
+			font-family: by;
+		}
+		.button{
+			font-family: by;
+			width: 80%;
+			border-radius: 5px;
+			padding: 3%;
+			cursor: pointer;
+			border: none;
+			background-color: rgba(90,173,173,0.3);
+			outline: none;
+			color: #f5f5f5;
+			margin-bottom: 4%;
+		}
+		.button:hover{
+			background-color: rgba(90,173,173,0.5);
+		}
+		.button:focus{
+			background-color: rgba(90,173,173,0.5);
+		}
+		input[type=text]{
+			font-family: Ubuntu, by, OpenSans, sans-serif;
+			font-size: 100%;
+			font-weight: 100;
+			border: none;
+			background-color: rgba(0, 0, 0, 0.25);
+			border-radius: 5px;
+			width: 40%;
+			height: 10%;
+			padding: 2%;
+			color: #eee;
+			margin-bottom: 4%;
+			outline: none;
+			direction: rtl;
+			text-align: right;
+		}
+		#name{
+			direction: rtl !important;
+			text-align: right;
+		}
+		#family{
+			direction: rtl !important;
+			text-align: right;
+		}
+		#ramz{
+			width: 80%;
+		}
+		.khata{
+			font-family: by;
+		}
+		.button::-moz-focus-inner {
+		  border: 0;
+		}
+	</style>
+</head>
+<body>
+<div class="div">
+<br>
+<h1>SendFile</h1>
+<div class="container">
+<form id="form" enctype="multipart/form-data" method="post">
+	<input type="hidden" name="group_id" id="group_id" value="">
+	<input type="text" name="caption" autocomplete="off" placeholder="توضیحات فایل"><br>
+	<input name="varqafile[]" type="file" multiple required><br><br>
+	<input type="submit" value="بفرست" class="button">
+</form>
+<div id="err"></div>
+<p style="font-size: 90%;">جهت فعالسازی ارسال فایل برای گروهتان<br>در وارکا با کاربری me وارد گفتوگوی خصوصی شوید<br>و درخواست را اعلام نمایید<br><i style="font-size: 80%;">حداقل بعد از سه روز کاری پاسخ داده میشود</i></p>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+
+var varqa_api_url = sessionStorage.getItem("varqaapiurl");
+
+var myuser = sessionStorage.getItem("varqauser");
+var mypass = sessionStorage.getItem("varqapass");
+console.log(myuser);
+gid = localStorage.getItem("gid");
+$("#group_id").val(gid);
+$(document).ready(function (e) {
+$("#form").on('submit',(function(e) {
+  e.preventDefault();
+  $.ajax({
+  		url: varqa_api_url+"upload/",
+  		type: "POST",
+  		headers: {varqauser: myuser, varqapass: mypass},
+  		data:  new FormData(this),
+  		contentType: false,
+  		      cache: false,
+  		processData:false,
+  		success: function(data)
+     	{
+    		if(data.ok == true)
+    		{
+    			$(".container").html('');
+    			$("#err").html(data.msg).fadeIn();
+    			setTimeout(function(){
+                  	window.location.replace(sessionStorage.getItem("varqaweburl"));
+                }, 2000);
+    		}
+    		else
+    		{
+    			$("#err").html(data.msg).fadeIn();
+    		}
+    	}       
+    });
+ }));
+});
+</script>
+</html>

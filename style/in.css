@@ -1,0 +1,125 @@
+@font-face {
+  font-family: by;
+  src        : url(fonts/by.ttf);
+}
+@font-face {
+  font-family: t;
+  src        : url(fonts/t.ttf);
+}
+@font-face {
+  font-family: OpenSans;
+  src        : url(fonts/OpenSansCondensed-Light.ttf);
+}
+@font-face {
+  font-family: Ubuntu;
+  src        : url(fonts/Ubuntu-Light.ttf);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus{
+  -webkit-text-fill-color: #eee;
+  transition             : background-color 5000s ease-in-out 0s;
+}
+body{
+  direction       : rtl;
+  background-color: #353535;
+}
+.container{
+  font-family: by;
+}
+.div{
+  width           : 30%;
+  height          : auto;
+  background-color: rgba(255,255,255,0.2);
+  box-shadow      : 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+  border-radius   : 3px;
+  font-size       : 150%;
+  text-align      : center;
+  display         : block;
+  top             : 50%;
+  left            : 50%;
+  position        : absolute;
+  transform       : translate(-50%, -50%);
+}
+h1{
+  font-family: Ubuntu, OpenSans, sans-serif;
+}
+  form{
+  display    : inline;
+  font-family: by;
+}
+#qalat{
+  color      : wheat;
+  font-family: by;
+}
+#dorost{
+  color      : teal;
+  font-family: by;
+}
+.khata{
+  font-family: by;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+button, #sub{
+  font-family: by, OpenSans, Ubuntu, sans-serif;
+  font-size  : 100%;
+  font-weight: 100;
+}
+input[type=text], input[type=password]{
+  font-family     : Ubuntu, by, OpenSans, sans-serif;
+  font-size       : 100%;
+  font-weight     : 100;
+  border          : none;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius   : 5px;
+  width           : 80%;
+  padding         : 3%;
+  color           : #eee;
+  margin-bottom   : 4%;
+  outline         : none;
+  direction       : ltr;
+  text-align      : left;
+}
+fieldset{
+  border      : 1px solid black;
+  font-family : by;
+  font-size   : 70%;
+  margin-right: 20%;
+  margin-left : 20%;
+}
+.sabt{
+  font-family  : by;
+  font-size    : 70%;
+  margin-bottom: 0;
+  margin-top   : 0;
+}
+a{
+  text-decoration: none;
+  color          : #5AADAD;
+  outline        : none;
+}
+a:hover{
+  color: #519B9B;
+}
+.button{
+  width           : 80%;
+  border-radius   : 5px;
+  padding         : 3%;
+  cursor          : pointer;
+  border          : none;
+  background-color: rgba(90,173,173,0.3);
+  outline         : none;
+  color           : #f5f5f5;
+}
+.button:hover{
+  background-color: rgba(90,173,173,0.5);
+}
+.button:focus{
+  background-color: rgba(90,173,173,0.5);
+}
+.button::-moz-focus-inner {
+  border: 0;
+}
