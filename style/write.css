@@ -66,6 +66,20 @@ object{
 button{
   font-family: by;
 }
+input[type=text]{
+  font-family     : Ubuntu, by, OpenSans, sans-serif;
+  font-size       : 100%;
+  font-weight     : 100;
+  width           : 90%;
+  border          : none;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius   : 5px;
+  padding         : 1%;
+  color           : #eee;
+  outline         : none;
+  direction       : rtl;
+  text-align      : right;
+}
 textarea{
   font-family     : Ubuntu, by, OpenSans, sans-serif;
   font-size       : 100%;
