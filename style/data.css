@@ -78,7 +78,7 @@ body{
   opacity                  : 0.9;
   position                 : relative;
   cursor                   : default;
-  word-break               : break-all;
+  word-break               : break-word;
 }
 .ma2{
   width                     : max-content;
@@ -100,7 +100,7 @@ body{
   opacity                   : 0.9;
   position                  : relative;
   cursor                    : default;
-  word-break                : break-all;
+  word-break                : break-word;
 }
 .dat1{
   margin      : 0;
