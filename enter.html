@@ -1,150 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf8">
-	<title>ورود به گروه یا کانال</title>
+	<meta charset="utf-8"/>
+	<meta name="keywords" content="varqa,ورقاء,ورقا,پیامرسان,پیام رسان,پیام رسان ورقاء,پیام رسان ورقا,پیامرسان ورقاء,پیامرسان ورقا">
+	<title>Varqa</title>
 	<script src="js/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<script src="js/jquery.min.js"></script>
-	<style type="text/css">
-		@font-face {
-    		font-family: by;
-    		src: url(style/fonts/by.ttf);
-		}
-		@font-face {
-    		font-family: OpenSans;
-    		src: url(style/fonts/OpenSansCondensed-Light.ttf);
-		}
-		@font-face {
-    		font-family: Ubuntu;
-    		src: url(style/fonts/Ubuntu-Light.ttf);
-		}
-		
-		body{
-			direction: rtl;
-			background-color: #353535;
-		}
-		input:-webkit-autofill,
-		input:-webkit-autofill:hover, 
-		input:-webkit-autofill:focus{
-			-webkit-text-fill-color: #eee;
-			transition: background-color 5000s ease-in-out 0s;
-		}
-		.div{
-			width: 30%;
-			height: auto;
-			background-color: rgba(255,255,255,0.2);
-			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
-			border-radius: 3px;
-			font-size: 150%;
-			text-align: center;
-			display: block;
-			top: 50%;
-			left: 50%;
-			position: absolute;
-			transform: translate(-50%, -50%);
-		}
-		h1{
-			font-family: Ubuntu, OpenSans, sans-serif;
-		}
-		p{
-			font-family: by;
-		}
-		input[type=text], input[type=password]{
-			font-family: Ubuntu, by, OpenSans, sans-serif;
-			font-size: 100%;
-			font-weight: 100;
-			border: none;
-			background-color: rgba(0, 0, 0, 0.25);
-			border-radius: 5px;
-			width: 80%;
-			height: 10%;
-			padding: 2%;
-			color: #eee;
-			margin-bottom: 4%;
-			outline: none;
-			direction: ltr;
-			text-align: left;
-		}
-		.button{
-			font-family: by;
-			width: 80%;
-			border-radius: 5px;
-			padding: 3%;
-			cursor: pointer;
-			border: none;
-			background-color: rgba(90,173,173,0.3);
-			outline: none;
-			color: #f5f5f5;
-		}
-		.button:hover{
-			background-color: rgba(90,173,173,0.5);
-		}
-		.button:focus{
-			background-color: rgba(90,173,173,0.5);
-		}
-		#warn{
-			margin-top: 0;
-		}
-		#khata{
-			font-family: by;
-		}
-		button::-moz-focus-inner {
-		  border: 0;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="style/in.css">
 </head>
 <body>
 <div class="div">
-<h1>EnterGroup|Channel</h1>
+<br>
+<h1>Varqa</h1>
 <div class="container">
-<p id="warn">*اگر وارد گروه میشوید توکن ادمین ساز را خالی بگذارید.</p>
-<p id="warn">*اگر وارد کانال میشوید توکن ادمین ساز را خالی بگذارید مگر اینکه بخواهید در کانال ادمین باشید در این صورت از ادمین اصلی این توکن را بگیرید و در بخش خود وارد کنید.</p>
-<input id="token" type="text" placeholder="توکن گروه یا کانال">
-<input id="admintoken" type="text" placeholder="توکن ادمین ساز کانال" title="جهت ادمین شدن درکانال (غیر اجباری)">
-<button onclick="entercg()" class="button">برو که رفتیم</button><br><br>
+<input type="text" id="user" placeholder="نام کاربری" autocomplete="off">
+<input type="password" id="pass" placeholder="رمز ورود" autocomplete="off">
+<input onclick="mylogin()" id="sub" type="submit" value="ورود" class="button">
+<br><br>
+<p class="sabt">رمزم رو <a href="https://account.varqa.ir/forget/">فراموش</a> کردم</p>
+<p class="sabt">اگر عضو نیستید <a href="create_account.html">ثبت نام</a> کنید</p>
+<p class="sabt">در مورد وارکا <a href="https://varqa.ir">بیشتر</a> بدانید</p><br>
 </div>
-<p id="khata"></p>
+<p class="khata"></p>
+<p id="qalat"></p>
 </div>
 </body>
 <script type="text/javascript">
 
 	var varqa_api_url = sessionStorage.getItem("varqaapiurl");
-	
-	var myuser = sessionStorage.getItem("varqauser");
-	var mypass = sessionStorage.getItem("varqapass");
 
-	
-	function entercg(){
+	function mylogin(){
 
-		$("#khata").html('');
+		$("#qalat").html('');
+		$(".khata").html('اندکی صبر باید...');
 
-		var mytoken = $("#token").val();
-		var myadmintoken = $("#admintoken").val();
+		var myuser = $("#user").val();
+		var mypass = $("#pass").val();
 
-		if (!mytoken) {$("#khata").html('جاها خالی رو پر کنید لطفا!!!'); return;}
-
-		var mythisdata = ( myadmintoken ) ? {token: mytoken, admintoken: myadmintoken} : {token: mytoken};
+		if (!myuser || !mypass) {$("#qalat").html('جاها خالی رو پر کنید لطفا!!!'); $(".khata").html(''); return;}
 
 		$.ajax({
-			type : 'GET',
-			url : varqa_api_url+'group/enter/',
+			type : 'POST',
+			url : varqa_api_url+'login/',
 			headers: {varqauser: myuser, varqapass: mypass},
-			data: mythisdata,
 			dataType: 'json',
 			contentType: 'application/json',
 			success : function(data){
-				if (data.ok == true) 
+				if (data.ok && data.ok == true) 
 				{
-					$(".container").html('');
-					$("#khata").html('با موفقیت وارد شدید...:-)');
-					localStorage.setItem("gid", data.results.group_id);
+					$(".khata").html('');
+					$(".container").html('با موفقیت وارد شدید...<br>');
+					sessionStorage.setItem("varqauser", myuser);
+					sessionStorage.setItem("varqapass", mypass);
 					setTimeout(function(){
                   		window.location.replace(sessionStorage.getItem("varqaweburl"));
                 	}, 2000);
 				}
 				else
 				{
-					$("#khata").html('د نه د. اشتباه زدی :-|');
+					$(".khata").html('د نه د. اشتباه زدی :-|');
 				}
 			}
 			});
@@ -152,8 +66,9 @@
 
 	$(document).keypress(function(e) {
     	if(e.which == 13) {
-    	    entercg();
+    	    mylogin();
     	}
 	});
+
 </script>
 </html>

@@ -8,20 +8,23 @@
 	<script src="js/app.js"></script>
 
 	<title>Varqa</title>
-	<link rel="stylesheet" type="text/css" href="style/write.css">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+	<link rel="stylesheet" type="text/css" href="style/data.css">
 </head>
 <body onload="sc()">
 <div id="goptions"></div>
 <div class="menu">
-	<div class="menli">varqa</div>
+	<div class="menli">Varqa</div>
 	<div class="mainmenu"></div>
 	 <div class="gca"><button onclick="show_modal()" class="bgsa">خصوصی</button></div>
 	 <div class="gsa"><a href="create.html"><button class="bgsa">گروه بسازید</button></a></div>
-	 <div class="gna"><a href="enter.html"><button class="bgsa">وارد شوید</button></a></div>
+	 <div class="gna"><a href="membership.html"><button class="bgsa">وارد شوید</button></a></div>
 	 <div class="gca2"><button onclick="varqaclose()" class="bgsa">خروج</button></div>
 </div>
-<div class="data">
-	<object id="if" type="text/html" data="data.html"></object>
+<div class="data" onscroll="get_baqi()">
+	<div onclick="show_mems()" id="titre">***</div>
+	<div id="memb"><div id="membs">افراد:<br></div></div>
+	<div id="matlab"></div>
 </div>
 <div class="container">
 </div>
@@ -46,20 +49,33 @@
 	if (localStorage.getItem("gid") != null) 
 	{
 		var gid = localStorage.getItem("gid");
+		var dgid = localStorage.getItem("gid");
 		// var data_r = '<iframe id="if" src="data.html?group='+gid+'"></iframe>';
-		var data_r = '<object id="if" type="text/html" data="data.html?group='+gid+'"></object>';
-		$(".data").html(data_r);
+		// var data_r = '<object id="if" type="text/html" data="data.html?group='+gid+'"></object>';
+		// $(".data").html(data_r);
 	}
 	else
 	{
 		var gid = 0;
-		var data_r;
+		var dgid = 0;
+		// var data_r;
 	}
 
 	wajx(false);
 
+
+	localStorage.setItem("last_count", 0);
+	localStorage.setItem("last_mess", 0);
+
+	get_group_info();
+	get_group_info(true);
+
+	get_all_data();
+	ajx(true);
+
 	var goptions = document.getElementById('goptions');
 	var modal = document.getElementById('id01');
+	var memshow = document.getElementById('memb');
 	
 	// When the user clicks anywhere outside of the goptions, close it
 	window.onclick = function(event) {
@@ -68,6 +84,9 @@
 	    }
 	    if (event.target == modal) {
 	        modal.style.display = "none";
+	    }
+	    if (event.target == memshow) {
+	        memshow.style.display = "none";
 	    }
 	}
 

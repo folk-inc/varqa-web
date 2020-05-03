@@ -1,2 +1,4 @@
 # varqa-web
-open source messenger with only javascript and jquery ajax in client
+the open source messenger by only javascript and jquery ajax in client
+<br>
+https://web.varqa.ir

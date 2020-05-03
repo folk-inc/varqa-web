@@ -28,12 +28,14 @@ button::-moz-focus-inner {
 }
 body{
   direction       : rtl;
-  overflow        : hidden;
+  /*overflow        : hidden;*/
   margin          : 0px;
   padding         : 0px;
   background-color: #353535;
 }
-object{
+.data{
+  overflow-y: auto;
+  direction: ltr;
   border  : none;
   width   : 80%;
   height  : 90%;
@@ -41,6 +43,8 @@ object{
   top     : 0;
   left    : 0;
   float   : left;
+  scrollbar-color: black #353535;
+  scrollbar-width: thin;
 }
 .container{
   position      : fixed;
