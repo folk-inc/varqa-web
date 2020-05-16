@@ -79,12 +79,41 @@
 	}
 
 
+	function isUnicode(str) {
+	var letters = [];
+	for (var i = 0; i <= str.length; i++) {
+		letters[i] = str.substring((i - 1), i);
+		if (letters[i].charCodeAt() > 255) { return true; }
+	}
+	return false;
+	}
+
 	$(document).keypress(function(e) {
-	    if (e.shiftKey) {
+		if (isUnicode($('#mess').val())) {
+			$("#mess").css('direction', 'rtl');
+		}
+		else {
+			console.log("mammad");
+			$("#mess").css('direction', 'ltr');
+		}
+		if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");}
+	    if (e.shiftKey) 
+	    {
+	    	if(e.which == 13) 
+	    	{
+	    		var thisrow = $('textarea').attr('rows');
+	    		thisrow++;
+	    		$('textarea').attr('rows', thisrow);
+	    		var thisheght = $('.container').innerHeight();
+	    		var chheght = $(document).height() - thisheght;
+	    		$('.data').height(chheght);
+	    	}
 	        return;
 	    }
     	if(e.which == 13) {
     	   sendm();
+    	   $('textarea').attr('rows', 1);
+    	   $('.data').height("90%");
     	}
 	});
 

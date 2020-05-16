@@ -94,8 +94,8 @@ textarea{
   color           : #eee;
   outline         : none;
   direction       : rtl;
-  text-align      : right;
-  height          : 1.5em;
+  /*text-align      : right;*/
+  min-height          : 1.5em;
   scrollbar-color: black #353535;
   scrollbar-width: thin;
 }
@@ -221,6 +221,13 @@ textarea{
   z-index         : 1;
   background-color: black;
   opacity         : 0.7;
+}
+.datalinks{
+  text-decoration: none;
+  color: yellowgreen;
+}
+.datalinks:hover{
+  color: black;
 }
 .menli{
   height          : 2em;
