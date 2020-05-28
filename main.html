@@ -8,8 +8,8 @@
 	<script src="js/app.js"></script>
 
 	<title>Varqa</title>
-	<link rel="stylesheet" type="text/css" href="style/main.css">
-	<link rel="stylesheet" type="text/css" href="style/data.css">
+	<link rel="stylesheet" type="text/css" media="screen and (orientation:landscape)" href="style/main.css">
+	<link rel="stylesheet" type="text/css" media="screen and (orientation:landscape)" href="style/data.css">
 	<link rel="stylesheet" type="text/css" media="screen and (orientation:portrait)" href="style/phone_style.css">
 </head>
 <body onload="sc()">
@@ -23,7 +23,7 @@
 	 <div class="gca2"><button onclick="varqaclose()" class="bgsa">خروج</button></div>
 </div>
 <div class="data" onscroll="get_baqi()">
-	<div onclick="show_mems()" id="titre">***</div>
+	<div onclick="show_mems()" id="titre">***</div><div id="phonem"><button onclick="openmymenu()">|||</button></div>
 	<div id="memb"><div id="membs">افراد:<br></div></div>
 	<div id="matlab"></div>
 </div>
@@ -61,7 +61,6 @@
 		// var data_r;
 	}
 
-
 	var goptions = document.getElementById('goptions');
 	var modal = document.getElementById('id01');
 	var memshow = document.getElementById('memb');
@@ -87,6 +86,19 @@
 		if (letters[i].charCodeAt() > 255) { return true; }
 	}
 	return false;
+	}
+
+	function openmymenu() {
+		if (window.matchMedia("(orientation:portrait)").matches)
+		{
+			$(".menu").css('display', 'block');
+		}
+	}
+	function closemymenu() {
+		if (window.matchMedia("(orientation:portrait)").matches)
+		{
+			$(".menu").css('display', 'none');
+		}
 	}
 
 	$(document).keypress(function(e) {

@@ -109,6 +109,9 @@ textarea{
   background-color: #5D5D5D;
   position        : fixed;
 }
+#phonem{
+  display: none;
+}
 .mensub{
   background-color: #5D5D5D;
   /*background    : rgba(255,255,255,0.2);*/
