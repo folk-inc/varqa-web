@@ -94,6 +94,7 @@ textarea{
   color           : #eee;
   outline         : none;
   direction       : rtl;
+  resize: none;
   /*text-align      : right;*/
   min-height          : 1.5em;
   scrollbar-color: black #353535;
@@ -185,6 +186,7 @@ textarea{
 .button{
   font-family     : by;
   width           : auto;
+  min-width: 2em;
   padding         : 1%;
   margin-right    : 1em;
   border          : none;
@@ -192,7 +194,7 @@ textarea{
   background-color: rgba(90,173,173,0.3);
   cursor          : pointer;
   outline         : none;
-  height          : 3.2em;
+  height          : 100%;
   color           : #f5f5f5;
   float           : left;
 }
