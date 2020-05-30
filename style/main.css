@@ -43,7 +43,7 @@ body{
   top     : 0;
   left    : 0;
   float   : left;
-  scrollbar-color: black #353535;
+  scrollbar-color: black transparent;
   scrollbar-width: thin;
 }
 .container{
@@ -53,6 +53,7 @@ body{
   padding-top   : 1%;
   padding-bottom: 1%;
   width         : 79%;
+  height        : 6%;
   right         : auto;
 }
 .messbox{
