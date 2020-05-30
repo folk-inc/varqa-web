@@ -108,7 +108,7 @@
 		else {
 			$("#mess").css('direction', 'ltr');
 		}
-		if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");}
+		if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");$('.container').height("6%");}
 	    if (e.shiftKey) 
 	    {
 	    	if(e.which == 13) 
@@ -116,8 +116,9 @@
 	    		var thisrow = $('textarea').attr('rows');
 	    		thisrow++;
 	    		$('textarea').attr('rows', thisrow);
-	    		var thisheght = $('.container').innerHeight();
+	    		var thisheght = $('textarea').innerHeight();
 	    		var chheght = $(document).height() - thisheght;
+	    		$('.container').height(thisheght);
 	    		$('.data').height(chheght);
 	    	}
 	        return;
@@ -125,6 +126,7 @@
     	if(e.which == 13) {
     	   sendm();
     	   $('textarea').attr('rows', 1);
+	       $('.container').height("6%");
     	   $('.data').height("90%");
     	}
 	});
