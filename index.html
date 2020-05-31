@@ -39,7 +39,7 @@
 <script type="text/javascript">
 	var varqa_api_url = sessionStorage.setItem("varqaapiurl", "https://api.varqa.ir/");
 	sessionStorage.setItem("varqaweburl", "https://web.varqa.ir/")
-	var myuser = sessionStorage.getItem("varqauser");
+	var myuser = localStorage.getItem("varqauser");
 	if (myuser) 
 	{
 		$("body").html('<object class="mypage" type="text/html" data="main.html"></object>');

@@ -50,10 +50,10 @@
 				{
 					$(".khata").html('');
 					$(".container").html('You are logged in...<br><br>');
-					sessionStorage.setItem("varqauser", myuser);
-					sessionStorage.setItem("varqapass", mypass);
+					localStorage.setItem("varqauser", myuser);
+					localStorage.setItem("varqapass", mypass);
 					setTimeout(function(){
-                  		window.location.replace(sessionStorage.getItem("varqaweburl"));
+                  		window.location.replace('index.html');
                 	}, 2000);
 				}
 				else
