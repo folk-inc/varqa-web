@@ -11,18 +11,18 @@
 <body>
 <div class="div">
 <br>
-<h1>Varqa</h1>
+<a href="https://varqa.ir" target="_blank"><img src="images/varqa-128.png"></a>
+<h5>Varqa</h5>
 <div class="container">
-<input type="text" id="user" placeholder="نام کاربری" autocomplete="off">
-<input type="password" id="pass" placeholder="رمز ورود" autocomplete="off">
-<input onclick="mylogin()" id="sub" type="submit" value="ورود" class="button">
+<input type="text" id="user" placeholder="User" autocomplete="off" autofocus>
+<input type="password" id="pass" placeholder="Password" autocomplete="off">
+<input onclick="mylogin()" id="sub" type="submit" value="Go" class="button">
 <br><br>
-<p class="sabt">رمزم رو <a href="https://account.varqa.ir/forget/">فراموش</a> کردم</p>
-<p class="sabt">اگر عضو نیستید <a href="create_account.html">ثبت نام</a> کنید</p>
-<p class="sabt">در مورد وارکا <a href="https://varqa.ir">بیشتر</a> بدانید</p><br>
+<p class="sabt">Forgot <a href="https://account.varqa.ir/forget/">Password</a></p>
+<p class="sabt">Create an <a href="create_account.html">Account</a></p>
+<p class="sabt">Tell me more <a href="https://varqa.ir">About</a> Varqa</p><br>
 </div>
-<p class="khata"></p>
-<p id="qalat"></p>
+<div class="khata"></div>
 </div>
 </body>
 <script type="text/javascript">
@@ -32,12 +32,12 @@
 	function mylogin(){
 
 		$("#qalat").html('');
-		$(".khata").html('اندکی صبر باید...');
+		$(".khata").html('<p>Please wait...</p>');
 
 		var myuser = $("#user").val();
 		var mypass = $("#pass").val();
 
-		if (!myuser || !mypass) {$("#qalat").html('جاها خالی رو پر کنید لطفا!!!'); $(".khata").html(''); return;}
+		if (!myuser || !mypass) {$(".khata").html('<p>Fill!!!</p>'); return;}
 
 		$.ajax({
 			type : 'POST',
@@ -49,7 +49,7 @@
 				if (data.ok && data.ok == true) 
 				{
 					$(".khata").html('');
-					$(".container").html('با موفقیت وارد شدید...<br>');
+					$(".container").html('You are logged in...<br><br>');
 					sessionStorage.setItem("varqauser", myuser);
 					sessionStorage.setItem("varqapass", mypass);
 					setTimeout(function(){
@@ -58,7 +58,7 @@
 				}
 				else
 				{
-					$(".khata").html('د نه د. اشتباه زدی :-|');
+					$(".khata").html('<p>Incorrect :-|</p>');
 				}
 			}
 			});
