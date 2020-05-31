@@ -31,6 +31,9 @@ body{
   /*overflow        : hidden;*/
   margin          : 0px;
   padding         : 0px;
+  background-image: url("../images/data-back.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
   background-color: #353535;
   font-size: 200% !important;
 }

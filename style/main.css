@@ -31,7 +31,10 @@ body{
   /*overflow        : hidden;*/
   margin          : 0px;
   padding         : 0px;
-  background-color: #353535;
+  background-image: url("../images/back2.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .data{
   overflow-y: auto;
@@ -43,7 +46,7 @@ body{
   top     : 0;
   left    : 0;
   float   : left;
-  scrollbar-color: black transparent;
+  scrollbar-color: black #353535;
   scrollbar-width: thin;
 }
 .container{
@@ -88,7 +91,7 @@ textarea{
   font-weight     : 100;
   width           : 90%;
   border          : none;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius   : 5px;
   padding         : 1%;
   color           : #eee;
