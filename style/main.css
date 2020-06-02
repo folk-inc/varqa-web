@@ -195,7 +195,7 @@ textarea{
   margin-right    : 1em;
   border          : none;
   border-radius   : 5px;
-  background-color: rgba(90,173,173,1);
+  background-color: black;
   cursor          : pointer;
   outline         : none;
   height          : 100%;
@@ -203,10 +203,10 @@ textarea{
   float           : left;
 }
 .button:hover{
-  background-color: rgba(90,173,173,0.7);
+  opacity: 0.5;
 }
 .button:focus{
-  background-color: rgba(90,173,173,0.7);
+  opacity: 0.5;
 }
 .hbutton{
   display         : block;
