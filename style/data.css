@@ -71,9 +71,9 @@ body{
   padding-top              : 0.1em;
   padding-bottom           : 0.1em;
   margin-top               : 0.5em;
-  border-top-right-radius  : 20px;
-  border-top-left-radius   : 20px;
-  border-bottom-left-radius: 20px;
+  border-top-right-radius  : 2em;
+  border-top-left-radius   : 2em;
+  border-bottom-left-radius: 2em;
   direction                : rtl;
   opacity                  : 1;
   position                 : relative;
@@ -93,9 +93,9 @@ body{
   padding-left              : 1em;
   padding-top               : 0.1em;
   padding-bottom            : 0.1em;
-  border-top-right-radius   : 20px;
-  border-top-left-radius    : 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius   : 2em;
+  border-top-left-radius    : 2em;
+  border-bottom-right-radius: 2em;
   direction                 : rtl;
   opacity                   : 1;
   position                  : relative;
