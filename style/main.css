@@ -249,6 +249,7 @@ textarea{
   cursor          : default;
 }
 .gsa{
+  font-family     : Ubuntu;
   position        : absolute;
   bottom          : 1.75em;
   float           : right;
@@ -262,6 +263,7 @@ textarea{
   height: 1.75em;
 }
 .gna{
+  font-family     : Ubuntu;
   position        : absolute;
   bottom          : 1.75em;
   float           : left;
@@ -275,6 +277,7 @@ textarea{
   height: 1.75em;
 } 
 .gca{
+  font-family     : Ubuntu;
   position        : absolute;
   bottom          : 3.5em;
   width           : 100%;
@@ -286,6 +289,7 @@ textarea{
   height: 1.75em;
 }
 .gca2{
+  font-family     : Ubuntu;
   position        : absolute;
   bottom          : 0em;
   width           : 100%;
@@ -297,6 +301,7 @@ textarea{
   height: 1.75em;
 }
 .bgsa{
+  font-family     : Ubuntu;
   background-color: black;
   color           : #f5f5f5;
   border          : none;

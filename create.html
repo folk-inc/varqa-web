@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf8">
-	<title>بسازید...</title>
+	<title>Create...</title>
 	<script src="js/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<script src="js/jquery.min.js"></script>
 	<style type="text/css">
@@ -47,13 +47,13 @@
 			font-family: Ubuntu, OpenSans, sans-serif;
 		}
 		p{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		#sub{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		button{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		input[type=text], input[type=password]{
 			font-family: Ubuntu, by, OpenSans, sans-serif;
@@ -78,6 +78,7 @@
 			cursor: pointer;
 		}
 		.button{
+			font-family: Ubuntu, by;
 			width: 80%;
 			border-radius: 5px;
 			padding: 3%;
@@ -98,7 +99,7 @@
 			text-align: right;
 		}
 		label{
-			font-family: by;
+			font-family: Ubuntu, by;
 			background-color: rgba(0, 0, 0, 0.25);
 			border-radius: 5px;
 			padding: 2%;
@@ -106,7 +107,7 @@
 			cursor: pointer;
 		}
 		#khata{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		button::-moz-focus-inner {
 		  border: 0;
@@ -117,11 +118,11 @@
 <div class="mymod">
 <h1>CreateGroup|Channel</h1>
 <div class="container">
-<input id="title" type="text" placeholder="عنوان"><br>
-<label>کانال باشه
+<input id="title" type="text" placeholder="title"><br>
+<label>Channel
   <input class="channel" type="checkbox" value="yes">
 </label><br><br>
-<button onclick="createcg()" class="button">برو که رفتیم</button><br><br>
+<button onclick="createcg()" class="button">Go</button><br><br>
 </div>
 <p id="khata"></p>
 </div>
@@ -141,7 +142,7 @@
 		var mytitle = $("#title").val();
 		var thistype = ($('input.channel').is(':checked')) ? 'channel' : 'group';
 
-		if (!mytitle) {$("#khata").html('جاها خالی رو پر کنید لطفا!!!'); return;}
+		if (!mytitle) {$("#khata").html('Fillا!!!'); return;}
 
 		$.ajax({
 			type : 'POST',
@@ -154,7 +155,7 @@
 				if (data.ok == true) 
 				{
 					$(".container").html('');
-					$("#khata").html('گروه با موفقیت ساخته شد...:-)');
+					$("#khata").html('Success...:-)');
 					localStorage.setItem("gid", data.results.group_id);
 					setTimeout(function(){
                   		window.location.replace(sessionStorage.getItem("varqaweburl"));
@@ -162,7 +163,7 @@
 				}
 				else
 				{
-					$("#khata").html('د نه د. اشتباه زدی :-|');
+					$("#khata").html('Incorrect :-|');
 				}
 			}
 			});

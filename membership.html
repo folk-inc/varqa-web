@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf8">
-	<title>ورود به گروه یا کانال</title>
+	<title>Enter...</title>
 	<script src="js/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<script src="js/jquery.min.js"></script>
 	<style type="text/css">
@@ -47,7 +47,7 @@
 			font-family: Ubuntu, OpenSans, sans-serif;
 		}
 		p{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		input[type=text], input[type=password]{
 			font-family: Ubuntu, by, OpenSans, sans-serif;
@@ -66,7 +66,7 @@
 			text-align: left;
 		}
 		.button{
-			font-family: by;
+			font-family: Ubuntu, by;
 			width: 80%;
 			border-radius: 5px;
 			padding: 3%;
@@ -86,7 +86,7 @@
 			margin-top: 0;
 		}
 		#khata{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		button::-moz-focus-inner {
 		  border: 0;
@@ -97,10 +97,10 @@
 <div class="div">
 <h1>EnterGroup|Channel</h1>
 <div class="container">
-<p id="warn">*اگر وارد گروه میشوید توکن ادمین ساز را خالی بگذارید.</p>
-<p id="warn">*اگر وارد کانال میشوید توکن ادمین ساز را خالی بگذارید مگر اینکه بخواهید در کانال ادمین باشید در این صورت از ادمین اصلی این توکن را بگیرید و در بخش خود وارد کنید.</p>
-<input id="token" type="text" placeholder="توکن گروه یا کانال">
-<input id="admintoken" type="text" placeholder="توکن ادمین ساز کانال" title="جهت ادمین شدن درکانال (غیر اجباری)">
+<p id="warn">*If you are in the group, leave the admin token empty.</p>
+<p id="warn">*If you are entering the channel, leave the admin builder token empty unless you want to be in the admin channel. In this case, take this token from the main admin and enter it in your section.</p>
+<input id="token" type="text" placeholder="Group or Channel token">
+<input id="admintoken" type="text" placeholder="Channel admin builder token" title="To become an administrator (Optional)">
 <button onclick="entercg()" class="button">برو که رفتیم</button><br><br>
 </div>
 <p id="khata"></p>
@@ -121,7 +121,7 @@
 		var mytoken = $("#token").val();
 		var myadmintoken = $("#admintoken").val();
 
-		if (!mytoken) {$("#khata").html('جاها خالی رو پر کنید لطفا!!!'); return;}
+		if (!mytoken) {$("#khata").html('Fillا!!!'); return;}
 
 		var mythisdata = ( myadmintoken ) ? {token: mytoken, admintoken: myadmintoken} : {token: mytoken};
 
@@ -136,7 +136,7 @@
 				if (data.ok == true) 
 				{
 					$(".container").html('');
-					$("#khata").html('با موفقیت وارد شدید...:-)');
+					$("#khata").html('Success...:-)');
 					localStorage.setItem("gid", data.results.group_id);
 					setTimeout(function(){
                   		window.location.replace(sessionStorage.getItem("varqaweburl"));
@@ -144,7 +144,7 @@
 				}
 				else
 				{
-					$("#khata").html('د نه د. اشتباه زدی :-|');
+					$("#khata").html('Incorrect :-|');
 				}
 			}
 			});
