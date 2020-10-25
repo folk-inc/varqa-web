@@ -1,3 +1,6 @@
+* {
+  transition: 0.4s;
+}
 ::-webkit-scrollbar {
   width: 5px;
 }

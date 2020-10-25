@@ -29,7 +29,7 @@
 </div>
 <div class="container"></div>
 <div id="id01" class="modal">
-  
+
   <div class="modal-content animate">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
@@ -46,7 +46,7 @@
 </body>
 <script type="text/javascript">
 
-	if (localStorage.getItem("gid") != null) 
+	if (localStorage.getItem("gid") != null)
 	{
 		var gid = localStorage.getItem("gid");
 		var dgid = localStorage.getItem("gid");
@@ -64,7 +64,7 @@
 	var goptions = document.getElementById('goptions');
 	var modal = document.getElementById('id01');
 	var memshow = document.getElementById('memb');
-	
+
 	// When the user clicks anywhere outside of the goptions, close it
 	window.onclick = function(event) {
 	    if (event.target == goptions) {
@@ -109,9 +109,9 @@
 			$("#mess").css('direction', 'ltr');
 		}
 		if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");$('.container').height("6%");}
-	    if (e.shiftKey) 
+	    if (e.shiftKey)
 	    {
-	    	if(e.which == 13) 
+	    	if(e.which == 13)
 	    	{
 	    		var thisrow = $('textarea').attr('rows');
 	    		thisrow++;

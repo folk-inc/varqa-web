@@ -54,7 +54,7 @@ body{
   padding-top   : 1%;
   padding-bottom: 1%;
   width         : 100%;
-  height: 5%;
+  height: 3em;
   z-index: 9;
   background-color: black;
 }
@@ -216,7 +216,7 @@ textarea{
   width           : auto;
   padding         : 1%;
   margin-right    : 0.3em;
-  min-width: 2em;
+  /* min-width: 2em; */
   border          : none;
   border-radius   : 5px;
   background-color: rgba(90,173,173,0.3);
@@ -517,7 +517,7 @@ textarea{
   margin      : 0;
   float       : left;
   font-family : Ubuntu;
-  font-size   : 100%;
+  font-size   : 70%;
   padding-left: 1em;
   color       : whitesmoke;
   display     : inline;
