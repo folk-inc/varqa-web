@@ -108,7 +108,14 @@
 		else {
 			$("#mess").css('direction', 'ltr');
 		}
-		if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");$('.container').height("6%");}
+		if(window.innerHeight < window.innerWidth)
+		{
+			if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");$('.container').height("6%");}
+		}
+		else
+		{
+			if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");$('.container').height("3em");}
+		}
 	    if (e.shiftKey)
 	    {
 	    	if(e.which == 13)
@@ -118,16 +125,32 @@
 	    		$('textarea').attr('rows', thisrow);
 	    		var thisheght = $('textarea').innerHeight();
 	    		var chheght = $(document).height() - thisheght;
-	    		$('.container').height(thisheght);
-	    		$('.data').height(chheght);
+					if(window.innerHeight < window.innerWidth)
+					{
+						$('.container').height(thisheght);
+						$('.data').height(chheght);
+					}
+					else
+					{
+						$('.container').height(thisrow+"em");
+						$('.data').height(chheght);
+					}
 	    	}
 	        return;
 	    }
     	if(e.which == 13) {
     	   sendm();
     	   $('textarea').attr('rows', 1);
-	       $('.container').height("6%");
-    	   $('.data').height("90%");
+				 if(window.innerHeight < window.innerWidth)
+				 {
+					 $('.container').height("6%");
+					 $('.data').height("90%");
+				 }
+				 else
+				 {
+					 $('.container').height("3em");
+					 $('.data').height("90%");
+				 }
     	}
 	});
 
