@@ -21,7 +21,6 @@
   src        : url(fonts/Ubuntu-Light.ttf);
 }
 body{
-  background-color: #353535;
   overflow-x      : hidden;
 }
 .kol{
@@ -35,7 +34,7 @@ body{
   direction    : ltr;
   position     : absolute;
   left         : 0;
-  bottom       : 0; 
+  bottom       : 0;
   padding      : 0.6em;
   max-width    : 3.3em;
   max-height   : 3.3em;
@@ -134,8 +133,8 @@ body{
   font-family     : Ubuntu, t;
   position        : fixed;
   display         : block;
-  background-color: black;
-  color           : #f5f5f5;
+  background-color: #5D5D5D;
+  color           : black;
   width           : 80%;
   height          : 2em;
   top             : 0;
@@ -157,8 +156,8 @@ body{
 }
 .jadid{
   font-family     : t;
-  color           : #f5f5f5;
-  background-color: rgba(0,0,0,0.5);
+  color           : black;
+  background-color: rgba(245,245,245,0.5);
   width           : 100%;
   height          : auto;
   text-align      : center;

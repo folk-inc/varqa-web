@@ -1,111 +1,115 @@
 @font-face {
-    font-family: by;
-    src: url(fonts/by.ttf);
+   	font-family: by;
+   	src: url(fonts/by.ttf);
 }
 @font-face {
-    font-family: t;
-    src: url(fonts/t.ttf);
+   	font-family: t;
+   	src: url(fonts/t.ttf);
 }
 @font-face {
-    font-family: OpenSans;
-    src: url(fonts/OpenSansCondensed-Light.ttf);
+   	font-family: OpenSans;
+   	src: url(fonts/OpenSansCondensed-Light.ttf);
 }
 @font-face {
-    font-family: Ubuntu;
-    src: url(fonts/Ubuntu-Light.ttf);
+   	font-family: Ubuntu;
+   	src: url(fonts/Ubuntu-Light.ttf);
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus{
-  -webkit-text-fill-color: #eee;
-  transition: background-color 5000s ease-in-out 0s;
+	-webkit-text-fill-color: #eee;
+	transition: background-color 5000s ease-in-out 0s;
 }
 body{
-  direction: ltr;
-  margin: 0;
-  padding: 0;
-  background-image: url("../images/back.jpg");
-  background-attachment: fixed;
+	direction: ltr;
+	margin: 0;
+	padding: 0;
+	background-image: url("../images/back.jpg");
+	background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .container{
-  font-family: Ubuntu, by;
+	font-family: Ubuntu, by;
 }
 img{
-  border-radius: 50%;
-  margin: 0;
-  padding: 0;
+	border-radius: 50%;
+	margin: 0;
+	padding: 0;
 }
 img:hover{
     opacity: 1;
-  /*border: 1px solid aqua;*/
+	/*border: 1px solid aqua;*/
 }
 h5{
     margin-top: 0;
-  font-family: Ubuntu, OpenSans, sans-serif;
-  cursor: default;
+	font-family: Ubuntu, OpenSans, sans-serif;
+	cursor: default;
 }
 form{
-  display: inline;
-  font-family: by;
+	display: inline;
+	font-family: by;
 }
 #dorost{
-  color: teal;
-  font-family: by;
+	color: teal;
+	font-family: by;
 }
 p{
     margin-top: 0;
 }
 .khata{
-  font-family: Ubuntu, by;
+	font-family: Ubuntu, by;
 }
 button::-moz-focus-inner {
   border: 0;
 }
 button, #sub{
-  font-family: by, OpenSans, Ubuntu, sans-serif;
-  font-size: 100%;
-  font-weight: 100;
+	font-family: by, OpenSans, Ubuntu, sans-serif;
+	font-size: 100%;
+	font-weight: 100;
 }
 input[type=text], input[type=password]{
-  font-family: Ubuntu, by, OpenSans, sans-serif;
-  font-size: 100%;
-  font-weight: 100;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 5px;
-  width: 80%;
-  padding: 3%;
-  color: #eee;
-  margin-bottom: 4%;
-  outline: none;
-  direction: ltr;
-  text-align: left;
+	font-family: Ubuntu, by, OpenSans, sans-serif;
+	font-size: 100%;
+	font-weight: 100;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	width: 80%;
+	padding: 3%;
+	color: #eee;
+	margin-bottom: 4%;
+	outline: none;
+	direction: ltr;
+	text-align: left;
 }
 fieldset{
-  border: 1px solid black;
-  font-family: by;
-  font-size: 70%;
-  margin-right: 20%;
-  margin-left: 20%;
+	border: 1px solid black;
+	font-family: by;
+	font-size: 70%;
+	margin-right: 20%;
+	margin-left: 20%;
 }
 .button{
-  width: 86%;
-  border-radius: 5px;
-  padding: 2%;
-  cursor: pointer;
-  border: none;
-  background-color: rgba(90,173,173,0.5);
-  outline: none;
-  color: #f5f5f5;
+	width: 86%;
+	border-radius: 5px;
+	padding: 2%;
+	cursor: pointer;
+	border: none;
+	opacity: 0.7;
+	background: linear-gradient(to right, #0bd, #009eff);
+	/*background-color: rgba(90,173,173,0.5);*/
+	outline: none;
+	color: #f5f5f5;
 }
 .button:hover{
-  background-color: rgba(90,173,173,0.7);
+    opacity: 0.9;
+	/*background-color: rgba(90,173,173,0.7);*/
 }
 .button:focus{
-  background-color: rgba(90,173,173,0.7);
+    opacity: 0.9;
+	/*background-color: rgba(90,173,173,0.7);*/
 }
 .button::-moz-focus-inner {
   border: 0;
@@ -113,87 +117,86 @@ fieldset{
 
 
 @media screen and (orientation:landscape) {
-  .div{
-    width: 20%;
-    font-size: 1em;
-    max-height: 65%;
-    background-color: rgba(255,255,255,0.2);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
-    border-radius: 3px;
-    text-align: center;
-    display: block;
-      top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%) scale(1,1);
-    overflow: auto;
-    scrollbar-color: black #353535;
-    scrollbar-width: thin;
-  }
-  img{
-    opacity: 0.7;
-  }
-  .sabt{
-    font-family: Ubuntu, by;
-    font-size: 70%;
-    margin-bottom: 0;
-    margin-top: 0;
-    cursor: default;
-  }
-  a{
-      display: contents;
-    text-decoration: none;
-    color: #064848;
-    outline: none;
-    cursor: pointer !important;
-  }
-  a:hover{
-    color: green;
-  }
+	.div{
+		width: 20%;
+		font-size: 1em;
+		max-height: 65%;
+		background-color: rgba(255,255,255,0.2);
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+		border-radius: 3px;
+		text-align: center;
+		display: block;
+    	top: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%) scale(1,1);
+		overflow: auto;
+		scrollbar-color: black #353535;
+		scrollbar-width: thin;
+	}
+	img{
+		opacity: 0.7;
+	}
+	.sabt{
+		font-family: Ubuntu, by;
+		font-size: 70%;
+		margin-bottom: 0;
+		margin-top: 0;
+		cursor: default;
+	}
+	a{
+    	display: contents;
+		text-decoration: none;
+		color: #064848;
+		outline: none;
+		cursor: pointer !important;
+	}
+	a:hover{
+		color: green;
+	}
 }
 
 
 @media screen and (orientation:portrait) {
-  .div{
-    width: 90%;
-    font-size: 300%;
-    max-height: 80%;
-    text-align: center;
-    display: block;
-      top: 50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%) scale(1,1);
-    overflow: auto;
-    scrollbar-color: black #353535;
-    scrollbar-width: thin;
-  }
-  img{
-    width: 35%;
-    opacity: 1;
-  }
-  .sabt{
-    font-family: Ubuntu, by;
-    font-size: 70%;
-    margin-bottom: 0;
-    margin-top: 10px;
-    cursor: default;
-    background-color: black;
-    padding: 0.6em;
-    width: 80%;
-    border-radius: 20px;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    opacity: 0.7;
-    color: white;
-    cursor: pointer;
-  }
-  a{
-      display: contents;
-    text-decoration: none;
-    color: white;
-    outline: none;
-  }
+	.div{
+		width: 90%;
+		/* font-size: 300%; */
+		max-height: 80%;
+		text-align: center;
+		display: block;
+    	top: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%) scale(1,1);
+		overflow: auto;
+		scrollbar-color: black #353535;
+		scrollbar-width: thin;
+	}
+	img{
+		width: 35%;
+		opacity: 1;
+	}
+	.sabt{
+		font-family: Ubuntu, by;
+		font-size: 70%;
+		margin-bottom: 0;
+		margin-top: 10px;
+		cursor: default;
+		background-color: black;
+		padding: 0.6em;
+		width: 80%;
+		border-radius: 5px;
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		opacity: 0.7;
+		color: white;
+		cursor: pointer;
+	}
+	a{
+    	display: contents;
+		text-decoration: none;
+		color: white;
+		outline: none;
+	}
 }
-

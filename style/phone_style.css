@@ -2,7 +2,7 @@
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: black; 
+  background-color: black;
 }
 button::-moz-focus-inner {
   border: 0;
@@ -35,7 +35,7 @@ body{
   background-repeat: repeat;
   background-attachment: fixed;
   background-color: #353535;
-  font-size: 150% !important;
+  /* font-size: 150% !important; */
 }
 .data{
   overflow-y: auto;
@@ -280,7 +280,7 @@ textarea{
   right           : 0;
   width           : 50%;
   text-align      : center;
-  background-color: black;  
+  background-color: black;
   outline         : none;
   border          : none;
   color           : #f5f5f5;
@@ -298,7 +298,7 @@ textarea{
   border          : none;
   color           : #f5f5f5;
   height: 1.75em;
-} 
+}
 .gca{
   position        : absolute;
   bottom          : 3.5em;
@@ -432,7 +432,7 @@ textarea{
   direction    : ltr;
   position     : absolute;
   left         : 0;
-  bottom       : 0; 
+  bottom       : 0;
   padding      : 0.6em;
   max-width    : 3.3em;
   max-height   : 3.3em;
@@ -662,12 +662,12 @@ img.avatar {
 }
 
 @-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
+  from {-webkit-transform: scale(0)}
   to {-webkit-transform  : scale(1)}
 }
-  
+
 @keyframes animatezoom {
-  from {transform: scale(0)} 
+  from {transform: scale(0)}
   to {transform  : scale(1)}
 }
 
