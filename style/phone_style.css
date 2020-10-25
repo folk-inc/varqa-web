@@ -69,8 +69,8 @@ body{
   font-family: by;
 }
 button{
-  font-family: by;
-  font-size: 120%;
+  /* font-family: by; */
+  font-size: 100%;
 }
 input[type=text]{
   font-family     : Ubuntu, by, OpenSans, sans-serif;
@@ -503,7 +503,7 @@ textarea{
   margin      : 0;
   float       : left;
   font-family : Ubuntu;
-  font-size   : 100%;
+  font-size   : 70%;
   padding-left: 1em;
   color       : whitesmoke;
   display     : inline;
