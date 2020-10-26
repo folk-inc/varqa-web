@@ -34,7 +34,7 @@ body{
   /*overflow        : hidden;*/
   margin          : 0px;
   padding         : 0px;
-  background-color: black;
+  background-color: #22262a;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,14 +114,14 @@ textarea{
   width           : 20%;
   height          : 100%;
   float           : right;
-  background-color: #5D5D5D;
+  background-color: #7a7f83;
   position        : fixed;
 }
 #phonem{
   display: none;
 }
 .mensub{
-  background-color: #5D5D5D;
+  background-color: #7a7f83;
   /*background    : rgba(255,255,255,0.2);*/
   min-height      : 4.5em;
   text-align      : center;
