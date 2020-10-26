@@ -116,6 +116,8 @@ textarea{
   float           : right;
   background-color: #7a7f83;
   position        : fixed;
+  display: flex;
+  flex-direction: column;
 }
 #phonem{
   display: none;
@@ -251,57 +253,64 @@ textarea{
   font-size       : 130%;
   cursor          : default;
 }
+.bmenu {
+  display: flex;
+  flex-direction: row;
+}
+.bmenu div {
+  border-right: 1px solid black;
+}
 .gsa{
   font-family     : Ubuntu;
-  position        : absolute;
-  bottom          : 1.75em;
+  /* position        : absolute; */
+  /* bottom          : 1.75em; */
   float           : right;
   right           : 0;
-  width           : 50%;
+  width           : 25%;
   text-align      : center;
   background-color: #343a40;
   outline         : none;
   border          : none;
   color           : #f5f5f5;
-  height: 1.75em;
+  height: 3em;
 }
 .gna{
   font-family     : Ubuntu;
-  position        : absolute;
-  bottom          : 1.75em;
+  /* position        : absolute; */
+  /* bottom          : 1.75em; */
   float           : left;
   left            : 0;
-  width           : 50%;
+  width           : 25%;
   text-align      : center;
   background-color: #343a40;
   outline         : none;
   border          : none;
   color           : #f5f5f5;
-  height: 1.75em;
+  height: 3em;
 }
 .gca{
   font-family     : Ubuntu;
-  position        : absolute;
-  bottom          : 3.5em;
-  width           : 100%;
+  /* position        : absolute; */
+  /* bottom          : 3.5em; */
+  width           : 25%;
   text-align      : center;
   background-color: #343a40;
   outline         : none;
   border          : none;
   color           : #f5f5f5;
-  height: 1.75em;
+  height: 3em;
 }
 .gca2{
   font-family     : Ubuntu;
-  position        : absolute;
-  bottom          : 0em;
-  width           : 100%;
+  /* position        : absolute; */
+  /* bottom          : 0em; */
+  width           : 25%;
   text-align      : center;
   background-color: #343a40;
   outline         : none;
-  border          : none;
+  border          : none !important;
   color           : #f5f5f5;
-  height: 1.75em;
+  height: 3em;
 }
 .bgsa{
   font-family     : Ubuntu;
@@ -365,7 +374,7 @@ textarea{
   overflow-y     : scroll;
   scrollbar-color: black transparent;
   scrollbar-width: thin;
-  height         : 84%;
+  /* height         : 84%; */
   direction      : ltr;
 }
 .cbutton{
