@@ -127,7 +127,7 @@ textarea{
   text-align      : center;
   padding         : 0;
   margin          : 0;
-  font-family     : by, Ubuntu;
+  font-family     : Ubuntu, by;
   border          : none;
   cursor          : pointer;
   width           : 100%;
