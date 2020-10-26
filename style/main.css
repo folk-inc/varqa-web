@@ -376,6 +376,7 @@ textarea{
   scrollbar-width: thin;
   /* height         : 84%; */
   direction      : ltr;
+  flex: 1;
 }
 .cbutton{
   font-family     : by;
