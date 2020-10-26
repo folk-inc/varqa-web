@@ -436,7 +436,7 @@ textarea{
   padding      : 0.6em;
   max-width    : 3.3em;
   max-height   : 3.3em;
-  border       : 2px solid black;
+  border       : 2px solid whitesmoke;
   border-radius: 20px;
   text-align   : center;
 }
