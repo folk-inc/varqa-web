@@ -18,13 +18,13 @@
     		font-family: Ubuntu;
     		src: url(style/fonts/Ubuntu-Light.ttf);
 		}
-		
+
 		body{
-			direction: rtl;
+			direction: ltr;
 			background-color: #353535;
 		}
 		input:-webkit-autofill,
-		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:hover,
 		input:-webkit-autofill:focus{
 			-webkit-text-fill-color: #eee;
 			transition: background-color 5000s ease-in-out 0s;
@@ -82,7 +82,7 @@
 		.button:focus{
 			background-color: rgba(90,173,173,0.5);
 		}
-		#warn{
+		.warn{
 			margin-top: 0;
 		}
 		#khata{
@@ -91,29 +91,90 @@
 		button::-moz-focus-inner {
 		  border: 0;
 		}
+
+		@media screen and (orientation:portrait) {
+			.div {
+				width: 100vw;
+				height: max-content;
+				min-height: 100vh;
+				background-color: rgba(255,255,255,0.2);
+				font-size: 3em;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				top: 0;
+				left: 0;
+				transform: none;
+			}
+			h1 {
+				flex: 1;
+				max-height: 1em;
+			}
+			.container {
+				margin-top: 10%;
+			}
+			.warn {
+				opacity: 0.5;
+				background-color: gold;
+				padding: 1em;
+			}
+			input[type=text], input[type=password]{
+				font-family: Ubuntu, by, OpenSans, sans-serif;
+				font-size: 100%;
+				font-weight: 100;
+				border: none;
+				background-color: rgba(0, 0, 0, 0.25);
+				border-radius: 5px;
+				width: 80%;
+				height: 2em;
+				padding: 2%;
+				color: #eee;
+				margin-bottom: 4%;
+				outline: none;
+				direction: ltr;
+				text-align: left;
+			}
+			.button{
+				font-family: Ubuntu, by;
+				font-size: 1em;
+				width: 80%;
+				height: 2em;
+				border-radius: 5px;
+				padding: 3%;
+				cursor: pointer;
+				border: none;
+				background-color: rgba(90,173,173,0.3);
+				outline: none;
+				color: #f5f5f5;
+			}
+			.button:active{
+				background-color: rgba(90,173,173,0.5);
+			}
+		}
 	</style>
 </head>
 <body>
 <div class="div">
 <h1>EnterGroup|Channel</h1>
 <div class="container">
-<p id="warn">*If you are in the group, leave the admin token empty.</p>
-<p id="warn">*If you are entering the channel, leave the admin builder token empty unless you want to be in the admin channel. In this case, take this token from the main admin and enter it in your section.</p>
+<p class="warn">*If you are entering the group, leave the admin builder token empty.</p>
+<p class="warn">*If you are entering the channel, leave the admin builder token empty unless you want to be in the admin of channel. In this case, take this token from the main admin and enter it in your section.</p>
 <input id="token" type="text" placeholder="Group or Channel token">
 <input id="admintoken" type="text" placeholder="Channel admin builder token" title="To become an administrator (Optional)">
-<button onclick="entercg()" class="button">برو که رفتیم</button><br><br>
-</div>
+<button onclick="entercg()" class="button">Go</button><br><br>
 <p id="khata"></p>
+</div>
 </div>
 </body>
 <script type="text/javascript">
 
 	var varqa_api_url = sessionStorage.getItem("varqaapiurl");
-	
+
 	var myuser = localStorage.getItem("varqauser");
 	var mypass = localStorage.getItem("varqapass");
 
-	
+
 	function entercg(){
 
 		$("#khata").html('');
@@ -121,7 +182,7 @@
 		var mytoken = $("#token").val();
 		var myadmintoken = $("#admintoken").val();
 
-		if (!mytoken) {$("#khata").html('Fillا!!!'); return;}
+		if (!mytoken) {$("#khata").html('Fill!!!'); return;}
 
 		var mythisdata = ( myadmintoken ) ? {token: mytoken, admintoken: myadmintoken} : {token: mytoken};
 
@@ -133,7 +194,7 @@
 			dataType: 'json',
 			contentType: 'application/json',
 			success : function(data){
-				if (data.ok == true) 
+				if (data.ok == true)
 				{
 					$(".container").html('');
 					$("#khata").html('Success...:-)');
