@@ -536,6 +536,18 @@ textarea{
   left        : 0.4em;
   font-style  : italic;
 }
+.mesdels {
+  color: black;
+  margin-left: 0.3em;
+  padding: 0.2em;
+  background-color: #005959;
+  border: none;
+  border-radius: 50%;
+  font-size: 1em;
+}
+.mesdels:active{
+  background-color: #D24D57;
+}
 #titre{
   font-family     : Ubuntu, t;
   position        : fixed;

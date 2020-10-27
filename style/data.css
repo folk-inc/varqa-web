@@ -143,6 +143,18 @@ body{
   cursor          : pointer;
   z-index         : 1;
 }
+.mesdels {
+  color: black;
+  margin-left: 0.5em;
+  background-color: #005959;
+  border: none;
+  border-radius: 50%;
+  font-size: 1em;
+  cursor: pointer;
+}
+.mesdels:hover{
+  background-color: #D24D57;
+}
 #matlab{
   margin-top   : 3em;
   margin-bottom: 4em;
