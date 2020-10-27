@@ -338,16 +338,16 @@ textarea{
   width           : 100%;
   height          : 100%;
 }
-.gsa:hover .bgsa{
+.gsa:active .bgsa{
   background: linear-gradient(to right, #0bd, #009eff);
 }
-.gna:hover .bgsa{
+.gna:active .bgsa{
   background: linear-gradient(to right, #0bd, #009eff);
 }
-.gca:hover .bgsa{
+.gca:active .bgsa{
   background: linear-gradient(to right, #0bd, #009eff);
 }
-.gca2:hover .bgsa{
+.gca2:active .bgsa{
   background: linear-gradient(to right, #0bd, #009eff);
 }
 .matn{

@@ -176,6 +176,10 @@ fieldset{
 		width: 35%;
 		opacity: 1;
 	}
+  .button:active{
+      opacity: 0.9;
+  	/*background-color: rgba(90,173,173,0.7);*/
+  }
 	.sabt{
 		font-family: Ubuntu, by;
 		font-size: 70%;
