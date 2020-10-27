@@ -597,7 +597,7 @@ textarea{
   left       : 50%;
   transform  : translate(-50%, -50%);
   color      : white;
-  font-family: by, Ubuntu;
+  font-family: Ubuntu, by;
   font-size  : 120%;
   direction  : rtl;
   cursor     : default;

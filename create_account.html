@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf8">
-	<title>ثبت نام در Varqa</title>
+	<title>Create an account in Varqa</title>
 	<script src="js/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<script src="js/jquery.min.js"></script>
 	<style type="text/css">
@@ -21,50 +21,40 @@
 
 
 		input:-webkit-autofill,
-		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:hover,
 		input:-webkit-autofill:focus{
 			-webkit-text-fill-color: #eee;
 			transition: background-color 5000s ease-in-out 0s;
 		}
 		body{
-			direction: rtl;
-			background-color: #ececec;
-			background-color: #353535;
+			direction: ltr;
+			margin: 0;
+	        padding: 0;
+	        background-image: url("images/back.jpg");
+	        background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
 		}
 		h1{
 			font-family: Ubuntu, OpenSans, sans-serif;
 		}
-		.div{
-			width: 30%;
-			height: max-content;
-			background-color: rgba(255,255,255,0.2);
-			box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
-			border-radius: 3px;
-			font-size: 150%;
-			text-align: center;
-			display: block;
-			top: 50%;
-			left: 50%;
-			position: absolute;
-			transform: translate(-50%, -50%);
-		}
 		p{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		label{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		.button{
-			font-family: by;
-			width: 80%;
+			font-family: Ubuntu, by;
+			width: 89%;
 			border-radius: 5px;
-			padding: 3%;
+			padding: 2%;
 			cursor: pointer;
 			border: none;
 			background-color: rgba(90,173,173,0.3);
 			outline: none;
 			color: #f5f5f5;
-			margin-bottom: 4%;
+			margin-bottom: 1%;
 		}
 		.button:hover{
 			background-color: rgba(90,173,173,0.5);
@@ -72,53 +62,156 @@
 		.button:focus{
 			background-color: rgba(90,173,173,0.5);
 		}
-		input[type=text], input[type=password], input[type=email]{
-			font-family: by, Ubuntu, OpenSans, sans-serif;
-			font-size: 100%;
-			font-weight: 100;
-			border: none;
-			background-color: rgba(0, 0, 0, 0.25);
-			border-radius: 5px;
-			width: 40%;
-			height: 10%;
-			padding: 2%;
-			color: #eee;
-			margin-bottom: 4%;
-			outline: none;
-			direction: ltr;
-			text-align: left;
-		}
-		#name{
-			direction: rtl !important;
-			text-align: right;
-		}
-		#family{
-			direction: rtl !important;
-			text-align: right;
-		}
 		#ramz{
 			width: 80%;
 		}
 		.khata{
-			font-family: by;
+			font-family: Ubuntu, by;
 		}
 		button::-moz-focus-inner {
 		  border: 0;
 		}
+
+
+		@media screen and (orientation:landscape) {
+			.div{
+				width: 30%;
+				height: max-content;
+				background-color: rgba(255,255,255,0.2);
+				box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+				border-radius: 3px;
+				text-align: center;
+				display: block;
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%, -50%);
+			}
+			input[type=text], input[type=password], input[type=email]{
+				font-family: Ubuntu, by, OpenSans, sans-serif;
+				font-size: 100%;
+				font-weight: 100;
+				border: none;
+				background-color: rgba(0, 0, 0, 0.25);
+				border-radius: 5px;
+				width: 40%;
+				height: 10%;
+				padding: 2%;
+				color: #eee;
+				margin-bottom: 4%;
+				outline: none;
+				direction: ltr;
+				text-align: left;
+			}
+			img{
+				opacity: 0.7;
+			}
+			.sabt{
+				font-family: Ubuntu, by;
+				font-size: 70%;
+				margin-bottom: 0;
+				margin-top: 0;
+				cursor: default;
+			}
+			a{
+		    	display: contents;
+				text-decoration: none;
+				color: #064848;
+				outline: none;
+				cursor: pointer !important;
+			}
+			a:hover{
+				color: green;
+			}
+		}
+
+
+		@media screen and (orientation:portrait) {
+			.div{
+				width: 100%;
+				height: 100vh;
+				background-color: rgba(255,255,255,0.2);
+				box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+				border-radius: 3px;
+				text-align: center;
+				display: block;
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%, -50%);
+				overflow: auto;
+				scrollbar-color: black #353535;
+				scrollbar-width: thin;
+			}
+			input[type=text], input[type=password], input[type=email]{
+				font-family: Ubuntu, by, OpenSans, sans-serif;
+				font-size: 100%;
+				font-weight: 100;
+				border: none;
+				background-color: rgba(0, 0, 0, 0.25);
+				border-radius: 5px;
+				width: 80%;
+				height: 2em;
+				padding: 2%;
+				color: #eee;
+				margin-bottom: 4%;
+				outline: none;
+				direction: ltr;
+				text-align: left;
+			}
+			.button {
+				padding: 4%;
+			}
+			.button:active{
+				background-color: rgba(90,173,173,0.5);
+			}
+			img{
+				width: 35%;
+				opacity: 1;
+			}
+		  .button:active{
+		      opacity: 0.9;
+		  	/*background-color: rgba(90,173,173,0.7);*/
+		  }
+			.sabt{
+				font-family: Ubuntu, by;
+				font-size: 70%;
+				margin-bottom: 0;
+				margin-top: 10px;
+				cursor: default;
+				background-color: black;
+				padding: 0.6em;
+				width: 80%;
+				border-radius: 5px;
+				display: block;
+				margin-right: auto;
+				margin-left: auto;
+				opacity: 0.7;
+				color: white;
+				cursor: pointer;
+			}
+			a{
+		    	display: contents;
+				text-decoration: none;
+				color: white;
+				outline: none;
+			}
+		}
+
 	</style>
 </head>
 <body>
 <div class="div">
 <h1>CreateAccount</h1>
 <div class="container">
-	<input type="text" id="name" placeholder="نام" autocomplete="off" required autofocus>
-	<input type="text" id="family" placeholder="نام خانوادگی" autocomplete="off" required><br>
-	<input type="text" id="user" placeholder="نام کاربری (لاتین)" autocomplete="off" required>
-	<input type="password" id="pass" placeholder="رمز" autocomplete="off" required><br>
-	<input type="email" id="email" placeholder="ایمیل" autocomplete="off" required>
-	<input type="text" id="tel" placeholder="موبایل" autocomplete="off" required>
-	<button onclick="createac()" class="button">برو که رفتیم</button>
-	<a href="https://web.varqa.ir"><button class="button">خانه</button></a>
+	<input type="text" id="name" placeholder="Firstname" autocomplete="off" required autofocus>
+	<input type="text" id="family" placeholder="Lastname" autocomplete="off" required><br>
+	<input type="text" id="user" placeholder="User(latin)" autocomplete="off" required>
+	<input type="password" id="pass" placeholder="Password" autocomplete="off" required><br>
+	<input type="email" id="email" placeholder="Email" autocomplete="off" required>
+	<input type="text" id="tel" placeholder="Phone" autocomplete="off" required>
+	<button onclick="createac()" class="button">Go</button>
+	<a href="https://web.varqa.ir"><button class="button">Home</button></a>
 </div>
 <p class="khata"></p>
 </div>
@@ -138,7 +231,7 @@
 		var myemail = $("#email").val();
 		var mytel = $("#tel").val();
 
-		if (!myuser || !mypass || !myname || !myfamily || !myemail || !mytel) {$("#khata").html('جاها خالی رو پر کنید لطفا!!!'); return;}
+		if (!myuser || !mypass || !myname || !myfamily || !myemail || !mytel) {$("#khata").html('Fill!!!'); return;}
 
 		$.ajax({
 			type : 'POST',
@@ -147,19 +240,19 @@
 			dataType: 'json',
 			contentType: 'application/json',
 			success : function(data){
-				if (data.ok == true) 
+				if (data.ok == true)
 				{
-					var cont = '<label>رمزی که برایتان ایمیل شده را وارد کنید</label><br><br>'+
-								'<input id="mytoken" type="text" autocomplete="off" placeholder="رمز ارسال شده به ایمیل" id="ramz" title="رمزی که برایتان ایمیل شده را وارد کنید" required>'+
-								'<button onclick="verifyac()" class="button">برو که رفتیم</button>'+
-								'<a href="https://web.varqa.ir"><button class="button">خانه</button></a>';
+					var cont = '<label>Enter your received token email</label><br><br>'+
+								'<input id="mytoken" type="text" autocomplete="off" placeholder="token" id="ramz" title="Token received by email" required>'+
+								'<button onclick="verifyac()" class="button">Go</button>'+
+								'<a href="https://web.varqa.ir"><button class="button">Home</button></a>';
 					$(".container").html(cont);
 					sessionStorage.setItem("varqacreateacuser", myuser);
 					sessionStorage.setItem("varqacreateacpass", mypass);
 				}
 				else
 				{
-					$(".khata").html('د نه د. اشتباه زدی :-|');
+					$(".khata").html('Incorrect :-|');
 				}
 			}
 			});
@@ -172,7 +265,7 @@
 
 		var mytoken = $("#mytoken").val();
 
-		if (!mytoken) {$("#khata").html('جاها خالی رو پر کنید لطفا!!!'); return;}
+		if (!mytoken) {$("#khata").html('Fill!!!'); return;}
 
 		var myusername = sessionStorage.getItem("varqacreateacuser");
 		var mypassword = sessionStorage.getItem("varqacreateacpass");
@@ -184,21 +277,21 @@
 			dataType: 'json',
 			contentType: 'application/json',
 			success : function(data){
-				if (data.ok == true) 
+				if (data.ok == true)
 				{
 					$(".container").html('');
 					sessionStorage.setItem("varqauser", myusername);
 					sessionStorage.setItem("varqapass", mypassword);
 					sessionStorage.removeItem("varqacreateacuser");
 					sessionStorage.removeItem("varqacreateacpass");
-					$(".khata").html('موفقیت خالص. خوش آمدید...');
+					$(".khata").html('Ok, All is well...');
 					setTimeout(function(){
                   		window.location.replace(sessionStorage.getItem("varqaweburl"));
                 	}, 2000);
 				}
 				else
 				{
-					$(".khata").html('د نه د. اشتباه زدی :-|');
+					$(".khata").html('Incorrect :-|');
 				}
 			}
 			});

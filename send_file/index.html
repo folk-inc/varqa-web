@@ -21,7 +21,7 @@
 
 
 		input:-webkit-autofill,
-		input:-webkit-autofill:hover, 
+		input:-webkit-autofill:hover,
 		input:-webkit-autofill:focus{
 			-webkit-text-fill-color: #eee;
 			transition: background-color 5000s ease-in-out 0s;
@@ -105,6 +105,69 @@
 		.button::-moz-focus-inner {
 		  border: 0;
 		}
+		@media screen and (orientation:portrait) {
+			body {
+				margin: 0;
+			}
+			.div {
+				width: 100vw;
+				height: max-content;
+				min-height: 100vh;
+				background-color: rgba(255,255,255,0.2);
+				font-size: 1em;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				top: 0;
+				left: 0;
+				transform: none;
+			}
+			h1 {
+				flex: 1;
+				max-height: 1em;
+			}
+			.container {
+				margin-top: 10%;
+			}
+			.warn {
+				opacity: 0.5;
+				background-color: gold;
+				padding: 1em;
+			}
+			input[type=text], input[type=password]{
+				font-family: Ubuntu, by, OpenSans, sans-serif;
+				font-size: 100%;
+				font-weight: 100;
+				border: none;
+				background-color: rgba(0, 0, 0, 0.25);
+				border-radius: 5px;
+				width: 80%;
+				height: 2em;
+				padding: 2%;
+				color: #eee;
+				margin-bottom: 4%;
+				outline: none;
+				direction: ltr;
+				text-align: left;
+			}
+			.button{
+				font-family: Ubuntu, by;
+				font-size: 1em;
+				width: 80%;
+				height: 2em;
+				border-radius: 5px;
+				padding: 3%;
+				cursor: pointer;
+				border: none;
+				background-color: rgba(90,173,173,0.3);
+				outline: none;
+				color: #f5f5f5;
+			}
+			.button:active{
+				background-color: rgba(90,173,173,0.5);
+			}
+		}
 	</style>
 </head>
 <body>
@@ -114,9 +177,9 @@
 <div class="container">
 <form id="form" enctype="multipart/form-data" method="post">
 	<input type="hidden" name="group_id" id="group_id" value="">
-	<input type="text" name="caption" autocomplete="off" placeholder="توضیحات فایل"><br>
+	<input type="text" name="caption" autocomplete="off" placeholder="Text..."><br>
 	<input name="varqafile[]" type="file" multiple required><br><br>
-	<input type="submit" value="بفرست" class="button">
+	<input type="submit" value="Go" class="button">
 </form>
 <div id="err"></div>
 <p style="font-size: 90%;">جهت فعالسازی ارسال فایل برای گروهتان<br>در وارکا با کاربری me وارد گفتوگوی خصوصی شوید<br>و درخواست را اعلام نمایید<br><i style="font-size: 80%;">حداقل بعد از سه روز کاری پاسخ داده میشود</i></p>
@@ -157,7 +220,7 @@ $("#form").on('submit',(function(e) {
     		{
     			$("#err").html(data.msg).fadeIn();
     		}
-    	}       
+    	}
     });
  }));
 });
