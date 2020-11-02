@@ -115,11 +115,21 @@
 		}
 		if(window.innerHeight < window.innerWidth)
 		{
-			if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");$('.container').height("6%");}
+			if ($('#mess').val() == '')
+			{
+				$('textarea').attr('rows', 1);
+				$('.container').height("4em");
+				// $('.data').height("90%");
+			}
 		}
 		else
 		{
-			if ($('#mess').val() == '') {$('textarea').attr('rows', 1);$('.data').height("90%");$('.container').height("3em");}
+			if ($('#mess').val() == '')
+			{
+				$('textarea').attr('rows', 1);
+				$('.container').height("3em");
+				// $('.data').height("90%");
+			}
 		}
 	    if (e.shiftKey)
 	    {
@@ -129,16 +139,17 @@
 	    		thisrow++;
 	    		$('textarea').attr('rows', thisrow);
 	    		var thisheght = $('textarea').innerHeight();
-	    		var chheght = $(document).height() - thisheght;
+	    		// var chheght = $(document).height() - thisheght;
 					if(window.innerHeight < window.innerWidth)
 					{
 						$('.container').height(thisheght);
-						$('.data').height(chheght);
+						// $('.data').height(chheght);
 					}
 					else
 					{
+						thisrow = thisrow+2;
 						$('.container').height(thisrow+"em");
-						$('.data').height(chheght);
+						// $('.data').height(chheght);
 					}
 	    	}
 	        return;
@@ -148,13 +159,13 @@
     	   $('textarea').attr('rows', 1);
 				 if(window.innerHeight < window.innerWidth)
 				 {
-					 $('.container').height("6%");
-					 $('.data').height("90%");
+					 $('.container').height("4em");
+					 // $('.data').height("90%");
 				 }
 				 else
 				 {
 					 $('.container').height("3em");
-					 $('.data').height("90%");
+					 // $('.data').height("90%");
 				 }
     	}
 	});
