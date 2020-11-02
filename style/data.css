@@ -192,6 +192,6 @@ body{
   color      : white;
   font-family: Ubuntu, by;
   font-size  : 120%;
-  direction  : rtl;
+  /* direction  : rtl; */
   cursor     : default;
 }
