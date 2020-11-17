@@ -18,9 +18,9 @@
 <input type="password" id="pass" placeholder="Password" autocomplete="off">
 <input onclick="mylogin()" id="sub" type="submit" value="Go" class="button">
 <br><br>
-<p class="sabt">Forgot <a href="https://account.varqa.ir/forget/">Password</a></p>
-<p class="sabt">Create an <a href="create_account.html">Account</a></p>
-<p class="sabt">Tell me more <a href="https://varqa.ir">About</a> Varqa</p><br>
+<a href="https://account.varqa.ir/forget/"><p class="sabt">Forgot Password</p></a>
+<a href="create_account.html"><p class="sabt">Create an Account</p></a>
+<a href="https://varqa.ir"><p class="sabt">Tell me more About Varqa</p></a><br>
 </div>
 <div class="khata"></div>
 </div>
@@ -32,12 +32,12 @@
 	function mylogin(){
 
 		$("#qalat").html('');
-		$(".khata").html('<p>Please wait...</p>');
+		$("#sub").val('Please wait...');
 
 		var myuser = $("#user").val();
 		var mypass = $("#pass").val();
 
-		if (!myuser || !mypass) {$(".khata").html('<p>Fill!!!</p>'); return;}
+		if (!myuser || !mypass) {$(".khata").html('<p>Fill!!!</p>'); $("#sub").val('Go'); return;}
 
 		$.ajax({
 			type : 'POST',
@@ -46,9 +46,10 @@
 			dataType: 'json',
 			contentType: 'application/json',
 			success : function(data){
-				if (data.ok && data.ok == true) 
+				if (data.ok && data.ok == true)
 				{
 					$(".khata").html('');
+					$("#sub").val('OK');
 					$(".container").html('You are logged in...<br><br>');
 					localStorage.setItem("varqauser", myuser);
 					localStorage.setItem("varqapass", mypass);
@@ -58,6 +59,7 @@
 				}
 				else
 				{
+					$("#sub").val('Go');
 					$(".khata").html('<p>Incorrect :-|</p>');
 				}
 			}

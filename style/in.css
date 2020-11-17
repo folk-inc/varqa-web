@@ -142,7 +142,12 @@ fieldset{
 		font-size: 70%;
 		margin-bottom: 0;
 		margin-top: 0;
-		cursor: default;
+    cursor: pointer;
+    width: max-content;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
 	}
 	a{
     	display: contents;
@@ -182,7 +187,7 @@ fieldset{
   }
 	.sabt{
 		font-family: Ubuntu, by;
-		font-size: 70%;
+		font-size: 80%;
 		margin-bottom: 0;
 		margin-top: 10px;
 		cursor: default;

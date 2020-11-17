@@ -72,7 +72,12 @@
 		  border: 0;
 		}
 
-
+		.step1{
+			display: block;
+		}
+		.step2, .step3, .step4{
+			display: none;
+		}
 		@media screen and (orientation:landscape) {
 			.div{
 				width: 30%;
@@ -204,13 +209,22 @@
 <div class="div">
 <h1>CreateAccount</h1>
 <div class="container">
-	<input type="text" id="name" placeholder="Firstname" autocomplete="off" required autofocus>
-	<input type="text" id="family" placeholder="Lastname" autocomplete="off" required><br>
-	<input type="text" id="user" placeholder="User(latin)" autocomplete="off" required>
-	<input type="password" id="pass" placeholder="Password" autocomplete="off" required><br>
-	<input type="email" id="email" placeholder="Email" autocomplete="off" required>
-	<input type="text" id="tel" placeholder="Phone" autocomplete="off" required>
-	<button onclick="createac()" class="button">Go</button>
+	<div class="step1">
+		<input type="text" id="name" placeholder="Firstname" autocomplete="off" required autofocus>
+		<input type="text" id="family" placeholder="Lastname(Optional)" autocomplete="off" required><br>
+	</div>
+	<div class="step2">
+		<input type="email" id="email" placeholder="Email" autocomplete="off" required>
+		<input type="text" id="tel" placeholder="Phone" autocomplete="off" required>
+	</div>
+	<div class="step3">
+		<input type="text" id="user" placeholder="User(latin)" autocomplete="off" required>
+		<input type="password" id="pass" placeholder="Password" autocomplete="off" required><br>
+	</div>
+	<div class="step4">
+		<p>Please wait...</p>
+	</div>
+	<button onclick="steps()" class="button">Go</button>
 	<a href="https://web.varqa.ir"><button class="button">Home</button></a>
 </div>
 <p class="khata"></p>
@@ -218,25 +232,93 @@
 </body>
 <script type="text/javascript">
 
+	jQuery.support.cors = true;
+
 	var varqa_api_url = sessionStorage.getItem("varqaapiurl");
+
+	var name = '';
+	var family = '';
+	var email = '';
+	var mobile = '';
+	var user = '';
+	var password = '';
+
+	var step = 1;
+
+	function steps(){
+		if (step == 1)
+		{
+			var myname = $("#name").val();
+			var myfamily = $("#family").val();
+			if (myname != '')
+			{
+				name = myname;
+				family = myfamily;
+				step = step+1;
+				$(".step1").css({"display": "none"});
+				$(".step2").css({"display": "block"});
+				return;
+			}
+			else
+			{
+				$(".khata").html('Fill!!!');
+				return;
+			}
+		}
+
+
+		if (step == 2)
+		{
+			var myemail = $("#email").val();
+			var mytel = $("#tel").val();
+			if (myemail != '' && mytel != '')
+			{
+				email = myemail;
+				mobile = mytel;
+				step = step+1;
+				$(".step2").css({"display": "none"});
+				$(".step3").css({"display": "block"});
+				return;
+			}
+			else
+			{
+				$(".khata").html('Fill!!!');
+				return;
+			}
+		}
+
+
+		if (step == 3)
+		{
+			var myuser = $("#user").val();
+			var mypass = $("#pass").val();
+			if (myuser != '' && mypass != '')
+			{
+				user = myuser;
+				password = mypass;
+				createac();
+				step = step+1;
+				$(".step3").css({"display": "none"});
+				$(".step4").css({"display": "block"});
+				return;
+			}
+			else
+			{
+				$(".khata").html('Fill!!!');
+				return;
+			}
+		}
+
+	}
 
 	function createac(){
 
 		$(".khata").html('');
 
-		var myname = $("#name").val();
-		var myfamily = $("#family").val();
-		var myuser = $("#user").val();
-		var mypass = $("#pass").val();
-		var myemail = $("#email").val();
-		var mytel = $("#tel").val();
-
-		if (!myuser || !mypass || !myname || !myfamily || !myemail || !mytel) {$("#khata").html('Fill!!!'); return;}
-
 		$.ajax({
 			type : 'POST',
 			url : varqa_api_url+'account/create/',
-			data: '{"name": "'+myname+'", "family": "'+myfamily+'", "user": "'+myuser+'", "password": "'+mypass+'", "email": "'+myemail+'", "phone": "'+mytel+'"}',
+			data: '{"name": "'+name+'", "family": "'+family+'", "user": "'+user+'", "password": "'+password+'", "email": "'+email+'", "phone": "'+mobile+'"}',
 			dataType: 'json',
 			contentType: 'application/json',
 			success : function(data){
@@ -252,7 +334,7 @@
 				}
 				else
 				{
-					$(".khata").html('Incorrect :-|');
+					$(".step4").html('Incorrect :-|<br>');
 				}
 			}
 			});
@@ -300,7 +382,7 @@
 
 	$(document).keypress(function(e) {
     	if(e.which == 13) {
-    		if (sessionStorage.getItem("varqacreateacuser") === null) {createac();}else{verifyac();}
+    		if (sessionStorage.getItem("varqacreateacuser") === null) {steps();}else{verifyac();}
     	}
 	});
 
