@@ -51,6 +51,8 @@
 </body>
 <script type="text/javascript">
 
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
 	if (localStorage.getItem("gid") != null)
 	{
 		var gid = localStorage.getItem("gid");
@@ -155,7 +157,10 @@
 	        return;
 	    }
     	if(e.which == 13) {
-    	   sendm();
+				if (!isMobile)
+				{
+					sendm();
+				}
     	   $('textarea').attr('rows', 1);
 				 if(window.innerHeight < window.innerWidth)
 				 {
@@ -170,9 +175,6 @@
     	}
 	});
 
-	$('#subm').click(function() {
-		sendm();
-	});
 
 	$('#sendusertel').click(function() {
 		create_contact();
