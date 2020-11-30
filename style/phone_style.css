@@ -473,6 +473,8 @@ textarea{
 .fileimg{
   max-width : 100%;
   max-height: 50em;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
 }
 .ma1{
   width                    : max-content;
