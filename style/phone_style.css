@@ -546,6 +546,18 @@ textarea{
   left        : 0.4em;
   font-style  : italic;
 }
+.mdtime{
+  background-color: white;
+  text-align: center;
+  width: max-content;
+  padding: 0.5em;
+  border-radius: 1em;
+  font-family: Ubuntu;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0.8;
+}
 .mesdels {
   color: black;
   margin-left: 0.3em;
