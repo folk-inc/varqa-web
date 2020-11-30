@@ -154,6 +154,7 @@ body{
   margin-right: auto;
   margin-left: auto;
   opacity: 0.8;
+  cursor: default;
 }
 .mesdels {
   color: black;
