@@ -453,10 +453,10 @@ textarea{
   left         : 0;
   bottom       : 0;
   padding      : 0.6em;
-  max-width    : 3.3em;
-  max-height   : 3.3em;
-  border       : 2px solid whitesmoke;
-  border-radius: 20px;
+  width        : 3.3em;
+  height       : 3.3em;
+  border       : 1px solid whitesmoke;
+  border-radius: 50%;
   text-align   : center;
 }
 .asl{
@@ -547,6 +547,11 @@ textarea{
   bottom      : 0.3em;
   left        : 0.4em;
   font-style  : italic;
+}
+.ma2 .dat1{
+  left: auto !important;
+  padding-left: 0 !important;
+  right: 2em;
 }
 .mdtime{
   background-color: white;
