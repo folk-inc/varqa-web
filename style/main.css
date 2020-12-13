@@ -264,9 +264,9 @@ textarea{
   color           : white;
   text-align      : center;
   width           : 100%;
-  background-color: black;
   font-size       : 130%;
   cursor          : default;
+  background: linear-gradient(to right, #0bd, #009eff);
 }
 .bmenu {
   display: flex;

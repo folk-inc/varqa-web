@@ -140,7 +140,7 @@ body{
   font-family     : Ubuntu, t;
   position        : fixed;
   display         : block;
-  background-color: #7a7f83;
+  background-color: #0bd;
   color           : black;
   width           : 80%;
   height          : 2em;
@@ -149,6 +149,7 @@ body{
   font-size       : 130%;
   cursor          : pointer;
   z-index         : 1;
+  border-right    : 1px solid black;
 }
 .mdtime{
   background-color: white;
